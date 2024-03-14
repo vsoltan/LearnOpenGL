@@ -1,6 +1,5 @@
 #include <GLFW/glfw3.h>
-
-import std;
+#include <iostream>
 
 int main() {
     std::cout << "hello world!" << std::endl;
