@@ -20,11 +20,12 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(GLFW)
 find_package(OpenGL REQUIRED)
 
+enable_language(C)
 add_subdirectory(glad)
 
 project(
     LearnOpenGL
-    LANGUAGES C CXX)
+    LANGUAGES CXX)
 
 add_executable(MyOpenGLApp main.cpp)
 
