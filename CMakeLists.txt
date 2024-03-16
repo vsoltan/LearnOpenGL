@@ -1,9 +1,13 @@
 
 cmake_minimum_required(VERSION 3.20.0)
 
+project(
+    LearnOpenGL
+    LANGUAGES CXX)
+
 set(CMAKE_CXX_STANDARD 23)
 
-Set(FETCHCONTENT_QUIET FALSE)
+set(FETCHCONTENT_QUIET FALSE)
 
 include(FetchContent)
 include(FindOpenGL)
@@ -22,10 +26,6 @@ find_package(OpenGL REQUIRED)
 
 enable_language(C)
 add_subdirectory(glad)
-
-project(
-    LearnOpenGL
-    LANGUAGES CXX)
 
 add_executable(MyOpenGLApp main.cpp)
 
