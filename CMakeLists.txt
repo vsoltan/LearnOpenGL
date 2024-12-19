@@ -21,13 +21,15 @@ FetchContent_Declare(
     GIT_PROGRESS TRUE
 )
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS on)
+
 FetchContent_MakeAvailable(GLFW)
 find_package(OpenGL REQUIRED)
 
 enable_language(C)
 add_subdirectory(glad)
 
-add_executable(MyOpenGLApp main.cpp)
+add_executable(MyOpenGLApp main.cpp test.cpp)
 
 target_include_directories(
     MyOpenGLApp
@@ -38,6 +40,10 @@ target_link_libraries(
     PRIVATE glfw
     PRIVATE GLAD
     PRIVATE OpenGL::GL)
+
+target_compile_definitions(
+    MyOpenGLApp PRIVATE GL_SILENCE_DEPRECATION
+)
 
 target_compile_options(MyOpenGLApp PRIVATE
   $<$<CXX_COMPILER_ID:MSVC>:/W4 /WX>

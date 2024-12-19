@@ -1,6 +1,12 @@
 # Prerequisites
 *.d
 
+build/*
+.cache/
+out/*
+.DS_Store
+.compile_commands.json
+
 # Compiled Object files
 *.slo
 *.lo
